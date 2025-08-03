@@ -8,9 +8,9 @@ echo "🚀 Starting build process..."
 echo "📦 Upgrading pip and setuptools..."
 pip install --upgrade pip setuptools wheel
 
-# Install requirements with verbose output
+# Install requirements without Pillow to avoid deployment issues
 echo "📦 Installing Python dependencies..."
-pip install -r requirements.txt --verbose
+pip install --no-cache-dir -r requirements-no-pillow.txt
 
 # Change to project directory
 echo "📁 Changing to project directory..."
