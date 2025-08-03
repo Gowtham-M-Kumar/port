@@ -33,12 +33,20 @@ pip install --no-cache-dir -r requirements.txt
 echo "📁 Changing to project directory..."
 cd portfolio_project
 
+# Create staticfiles directory if it doesn't exist
+echo "📁 Creating staticfiles directory..."
+mkdir -p staticfiles
+
 # Collect static files
 echo "📁 Collecting static files..."
-python manage.py collectstatic --no-input
+python manage.py collectstatic --no-input --clear
 
 # Run migrations
 echo "🗄️ Running database migrations..."
 python manage.py migrate
+
+# Test the application
+echo "🧪 Testing application..."
+python manage.py check --deploy
 
 echo "✅ Build completed successfully!" 
