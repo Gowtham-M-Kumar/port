@@ -4,12 +4,8 @@ from django.core.mail import send_mail
 from django.conf import settings
 from django.contrib.auth.hashers import make_password, check_password
 from django.http import JsonResponse
-from .forms import AboutContentForm, SettingsPasswordForm
-from .models import AboutContent, Settings
-from projects.models import Project
-from resume.models import ResumeSection
-from contact.models import Contact, ContactInfo
-from contact.forms import ContactForm
+from .forms import AboutContentForm, SettingsPasswordForm, ContactForm, ProjectForm, ResumeSectionForm, ContactInfoForm
+from .models import AboutContent, Settings, Contact, Project, ResumeSection, ContactInfo
 
 # Create your views here.
 
